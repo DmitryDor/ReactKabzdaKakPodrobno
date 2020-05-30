@@ -1,74 +1,36 @@
-import React, {useLayoutEffect} from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Accordion from './components/Accordion/Accordion';
+import {Raiting} from "./components/Raiting/Raiting";
+
 
 function App() {
+
     console.log("App rendering")
     return (
         <div className="App">
-            <AppTitle/>
-            <Raiting/>
-            <Accordion/>
-            <Raiting/>
+            <PageTitle title={"This is APP component"}/>
+            <PageTitle title={"My friends"}/>
+            Article 1
+            <Raiting value={3}/>
+            <Accordion value={"Menu"}/>
+            <Accordion value={"Users"}/>
+            Article 2
+            <Raiting value={0}/>
+            <Raiting value={1}/>
+            <Raiting value={2}/>
+            <Raiting value={3}/>
+            <Raiting value={4}/>
+            <Raiting value={5}/>
         </div>
     );
 }
 
-function AppTitle() {
-    console.log("AppTitle rendering")
+function PageTitle(props: any) {
+    debugger
+    console.log("PageTitle rendering")
     return (
-        <>This is APP component</>
-    )
-}
-
-function Raiting() {
-    console.log("Raiting rendering");
-    return (
-        <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-        </div>
-    );
-}
-
-function Star() {
-    console.log("Star rendering")
-    return <div>star</div>
-}
-
-
-function Accordion() {
-    console.log("Accordion rendering");
-    return (
-        <div>
-            <AccordionTitle/>
-            <AccordionBody/>
-        </div>
-    )
-}
-
-function AccordionTitle() {
-    console.log("AccordionTitle rendering")
-    return (
-        <div>
-            <h3>Menu</h3>
-        </div>
-    )
-}
-
-function AccordionBody() {
-    console.log("AccordionBody rendering")
-    return (
-        <div>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </div>
+        <h1>{props.title}</h1>
     )
 }
 
